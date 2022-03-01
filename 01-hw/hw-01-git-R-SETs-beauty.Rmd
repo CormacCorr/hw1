@@ -311,7 +311,7 @@ ggplot(beauty, aes(x = eval, y = beauty)) +
 
 1.  Is the relationship between the two variables  positive or negative? What does this mean in context of the data?
 
-5. Slightly Positive, this is due to the slight ascension in the line of best fit as we cross the student evaluation of teaching score. However, this is only a slight increase and largely minimal, indicating that the results are nearly random.
+Answer: Slightly Positive, this is due to the slight ascension in the line of best fit as we cross the student evaluation of teaching score. However, this is only a slight increase and largely minimal, indicating that the results are nearly random.
 
 🧶 ✅ ⬆️ *Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline. You should confirm that what you committed and pushed are indeed in your repo that we will see by visiting your repo on GitHub.*
 
