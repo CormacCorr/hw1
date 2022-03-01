@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>beauty <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(female,age) <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(age)</span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(age,n)</span></code></pre></div>
 <pre><code>## # A tibble: 52 × 3
 ## # Groups:   female [2]
 ##    female   age     n
@@ -336,17 +336,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  1      1    29     1
 ##  2      1    31     6
 ##  3      0    32    11
-##  4      1    33    18
-##  5      0    33     5
-##  6      1    34     8
-##  7      0    34     3
-##  8      0    35     9
-##  9      1    35     3
+##  4      0    33     5
+##  5      1    33    18
+##  6      0    34     3
+##  7      1    34     8
+##  8      1    35     3
+##  9      0    35     9
 ## 10      1    36     4
 ## # … with 42 more rows</code></pre>
 <ol style="list-style-type: decimal">
 <li>Based on the previous output we can easily identify the most common sex at each professor age, but the output is sorted by <code>n</code> (the frequencies) as opposed to being organized by the <code>female</code>. Build on the pipeline to arrange the results so that they’re arranged by <code>female</code> first, and then <code>n</code>. This means you will need to add one more step to the pipeline, and you have two options: <code>arrange(age, n)</code> or <code>arrange(n, age)</code>. You should try both and decide which one organizes the output by species and then ranks the names in order of frequency for each species.</li>
 </ol>
+<p>4: This allows us to see the number of female professors at each age. However, i have a feeling this is not what i need to do.</p>
 <p>🧶 ✅ ⬆️ <em>Write your answer in your R Markdown document under Exercise 4. In this exercise you’re asked to complete the code provided for you. You should insert the code in the code chunk provided for you, knit the document to see the output, and then write your narrative for the answer based on the output of this function, and knit again to see your narrative, code, and output in the resulting document. Then, commit your changes with a commit message that says “Completed Exercise 4”, and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
 <p>The following visualization plots the student evaluation of the professor against their assessed beauty. The diagonal line on the plot is the <span class="math inline">\(x = y\)</span> line; fitted using OLS.</p>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
@@ -356,7 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 <ol style="list-style-type: decimal">
-<li>Is the relationship between the two variables positive or negative? What does this mean in context of the data?</li>
+<li><p>Is the relationship between the two variables positive or negative? What does this mean in context of the data?</p></li>
+<li><p>Slightly Positive, this is due to the slight ascension in the line of best fit as we cross the student evaluation of teaching score. However, this is only a slight increase and largely minimal, indicating that the results are nearly random.</p></li>
 </ol>
 <p>🧶 ✅ ⬆️ <em>Now is a good time to commit and push your changes to GitHub with an appropriate commit message. Commit and push all changed files so that your Git pane is cleared up afterwards. Make sure that your last push to the repo comes before the deadline. You should confirm that what you committed and pushed are indeed in your repo that we will see by visiting your repo on GitHub.</em></p>
 </div>
