@@ -285,6 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>According to the data viewer, how many evaluations are include the dataset?</li>
 </ol>
+<p>1: 463 evaluations</p>
 <p>🧶 ✅ ⬆️ <em>Write your answer in your R Markdown document under Exercise 1, knit the document, commit your changes with a commit message that says “Completed Exercise 1”, and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Again, according to the data viewer, how many variables do we have for evaluation?</li>
@@ -294,8 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>How many of the evaluations are for female professors? To do this you will need to count the frequencies of female indicator variable and display the results. The following code does exactly that.</li>
 </ol>
 <p><label for="tufte-mn-3" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-3" class="margin-toggle"><span class="marginnote"><span style="display: block;">The two lines of code can be read as “Start with the beauty data frame, and then count the sum up the binary variable female, and display the results. The ‘and then’ in the previous sentence maps to %&gt;%, the pipe operator, which takes what comes before it and plugs it in as the first argument of the function that comes after it.”</span></span></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>beauty <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">no_of_female_professors=</span><span class="fu">sum</span>(female))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>beauty <span class="sc">%&gt;%</span><span class="fu">summarise</span>(<span class="at">no_of_female_professors=</span><span class="fu">sum</span>(female))</span></code></pre></div>
 <p>🧶 ✅ ⬆️ <em>Write your answer in your R Markdown document under Exercise 3. In this exercise you will not only provide a written answer but also include some code and output. You should insert the code in the code chunk provided for you, knit the document to see the output, and then write your narrative for the answer based on the output of this function, and knit again to see your narrative, code, and output in the resulting document. Then, commit your changes with a commit message that says “Completed Exercise 3”, and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.</em></p>
 <p>Let’s also look how many professors there are at each age range and what is the dominant sex. For this we need to first <code>group_by()</code> the <code>age</code>, and then do the same counting we did before but using <code>tally()</code>.</p>
 <p><label for="tufte-mn-4" class="margin-toggle">⊕</label><input type="checkbox" id="tufte-mn-4" class="margin-toggle"><span class="marginnote"><span style="display: block;">Older professors are not as common</span></span></p>
